@@ -2,8 +2,8 @@ const generateArray = (length, max) => {
     return [...new Array(length)].map(() => Math.round(Math.random() * max))
 }
 
-const arr1 = generateArray(50, 99);
-const arr2 = generateArray(50, 99);
+const arr1 = generateArray(5, 3);
+const arr2 = generateArray(5, 3);
 
 function binarySearch (array, n) {
     let start = 0
@@ -27,9 +27,9 @@ function intersection(array1, array2) {
     const result = []
 
     for(let i = 0; i < array1.length; i++) {
-        const found = binarySearch(arr2, arr1[i])
+        const found = binarySearch(array2, array1[i])
         if(found > -1) {
-            result.push(arr1[i])
+            result.push(array1[i])
         }
     }
     return result
